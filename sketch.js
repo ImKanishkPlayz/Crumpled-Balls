@@ -6,7 +6,7 @@ const Body = Matter.Body;
 const Render = Matter.Render;
 var dustbinObj,groundObject	
 var world;
-var paper;
+var paperObj;
 
 
 function setup() {
@@ -19,7 +19,7 @@ function setup() {
 	
 	groundObject=new ground(width/2,670,width,20);
 	dustbinObj=new dustbin(1200,650);
-	paper=new Paper(1200,250);
+	paperObj=new paper(1200,250);
 
 	Engine.run(engine);
   
