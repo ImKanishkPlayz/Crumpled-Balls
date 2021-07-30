@@ -1,31 +1,29 @@
 class Paper {
-  constructor(x, y) {
+  constructor(x,y) {
       var options = {
-          isStatic:false,
-          restitution: 0.3,
-          friction: 0,
-          density : 1.2
+          isStatic : false,
+          restitution : 0.3,
+          friction : 0,
+          density : 0.1
           
       }
-      this.r = 24;
+      this.r=85;
       this.body = Bodies.circle(x, y, this.r, options);
       this.image = loadImage("paper.png");
       World.add(world, this.body);
   }
+  
   display() {
 
       var pos = this.body.position;
-      var angle = this.body.angle;
 
       push();
       translate(pos.x, pos.y);
-      rotate(angle);
-      imageMode(CENTER);
-      image(this.image, 0, 0, this.width, this.height);
-      //noStroke();
-      fill("white");
+      imageMode(RADIUS);
+      image(this.image,0,0, this.r, this.r);
+      noStroke();
+      fill(255);
       ellipseMode(RADIUS);
-      ellipse(0,0,this.r,this.r);
       pop();
   }
 
